@@ -1,0 +1,12 @@
+{
+  "devUrl": "https://7ec4d01f07.nxcli.io",
+  "themeName": "ENGSERVE",
+  "proxyUrl": "https://localhost:3000",
+  "open": true,
+  "bsWatchFiles": [
+    "inc/**/*.php",
+    "parts/**/*.php",
+    "templates/**/*.php",
+    "assets/**/*.js"
+  ]
+}

@@ -1,0 +1,35 @@
+// Project variables
+// Note: Prefer using framework variables
+
+$sherwood-green: #024930;
+$deep-sage: #507D2A;
+$norway-green: #A7C4A0;
+$supernova-yellow: #FFCC00;
+$mine-shaft: #343434;
+$dune: #333333;
+$concrete: #F0F0F0;
+$midnight-moss: #00170F;
+//
+//$text-color: #333;
+
+//$primary-color: $blue;
+//$sub-color: $primary-color;
+
+$spectral: 'Spectral', serif;
+$ivystyle-sans: 'ivystyle-sans';
+
+$font: $ivystyle-sans;
+//$font: 'Open Sans', Helvetica, Roboto, Arial, sans-serif;
+$sub-font: $spectral;
+$fa: 'Font Awesome 6 Free';
+//$fab: 'Font Awesome 6 Brands';
+
+// Font Awesome Vars
+//$fa-font-display: swap;
+
+// Project mixins
+
+// Custom fonts
+:root {
+  --content-size: 80rem;
+}
