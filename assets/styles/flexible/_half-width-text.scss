@@ -1,0 +1,25 @@
+.half-width-text {
+  padding: 120px 0;
+  background-size: 100%;
+
+  .grid-container {
+    overflow: hidden;
+  }
+
+  .section-title {
+    margin-bottom: 56px;
+  }
+
+  article {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 454px;
+      height: 1px;
+      background-color: $sherwood-green;
+      right: calc(100% + 91px);
+    }
+  }
+}

@@ -57,6 +57,14 @@
                             'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true" data-multi-open="false" data-close-on-click-inside="false">%3$s</ul>',
                             'walker' => new theme\FoundationNavigation()
                         )); ?>
+                        <div class="search-form-container">
+                            <button class="search-button-show">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <div class="search-form">
+                                <?php get_search_form(); ?>
+                            </div>
+                        </div>
                     </nav>
                 <?php endif; ?>
             </div>

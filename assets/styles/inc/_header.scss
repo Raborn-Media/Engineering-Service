@@ -1,3 +1,19 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  padding: 13px 15px;
+
+  .menu-grid-container {
+    max-width: 1360px;
+  }
+}
+
+.admin-bar .header {
+  top: 32px;
+}
 .logo {
   h1 {
     font-size: 0;
@@ -112,9 +128,21 @@
 @include breakpoint(medium) {
   /* TOP BAR STYLING */
 
+  .top-bar {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    .menu-main-menu-container {
+      flex-grow: 1;
+      height: 100%;
+    }
+  }
+
   .header-menu.menu {
     /* Align menu items to the right */
-    // justify-content: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
 
     /* Align menu items to the center */
     // justify-content: center;
@@ -122,13 +150,20 @@
     li {
       > a {
         /* Regular menu item style */
-        line-height: 40px;
-        color: $primary-color;
+        //line-height: 40px;
+        color: $white;
+        text-transform: uppercase;
+        font-family: $font;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 8px 20px;
 
         &:hover {
           /* menu item style on hover */
-          background: $primary-color;
-          color: $white;
+          //background: $primary-color;
+          color: $supernova-yellow;
         }
       }
 
@@ -137,8 +172,8 @@
       &.current_page_parent {
         > a {
           /* Style of Current page and Ancestor page */
-          background: $primary-color;
-          color: $white;
+          //background: $primary-color;
+          color: $supernova-yellow;
         }
       }
 
@@ -150,8 +185,8 @@
 
       &.is-active > a {
         /* Parent link style on dropdown hover */
-        background: $white;
-        color: $primary-color;
+        //background: $white;
+        color: $supernova-yellow;
       }
     }
 
@@ -193,5 +228,41 @@
         /* Styles for 2nd level dropdown menu */
       }
     }
+  }
+}
+
+.search-form-container {
+  padding-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .search-button-show {
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $supernova-yellow;
+    }
+  }
+
+  .search-form {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    top: 120%;
+    display: none;
+
+    .search {
+      //width: 250px;
+      input {
+        //border-radius: 9px 0;
+      }
+    }
+  }
+
+  .search-form.show {
+    display: block;
   }
 }

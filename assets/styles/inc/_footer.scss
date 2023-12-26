@@ -1,10 +1,84 @@
+.before-footer-section {
+  position: relative;
+  bottom: -5px;
+  img {
+    //filter: grayscale(50);
+    width: 100%;
+    height: auto;
+  }
+}
+
 .footer {
   margin-top: auto;
+  background-color: #151515;
+  padding: 80px 15px;
+}
+
+.footer-top-container,
+.footer-bottom-container {
+  max-width: 1240px;
+}
+
+.footer-top-container {
+  margin-bottom: 40px;
 }
 
 .footer__logo {
   img {
-    max-height: 120px;
+    max-height: 99px;
+    width: 100%;
+  }
+}
+
+.footer-contact-info {
+  color: $white;
+
+  address,
+  p {
+    max-width: fit-content;
+    margin: 0 auto;
+  }
+
+  .footer-contact-link {
+    position: relative;
+    padding: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 150% */
+    color: $white;
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $supernova-yellow;
+      }
+    }
+
+    &::before {
+      content: '';
+      margin-right: 8px;
+      display: inline-block;
+
+      font-family: $fa;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    &--phone {
+      &::before {
+        content: '\f879';
+        transform: rotate(90deg);
+        transform-origin: center;
+      }
+    }
+
+    &--address {
+      &::before {
+        content: '\f3c5';
+      }
+    }
   }
 }
 
@@ -15,22 +89,42 @@
 .footer-menu {
   @include list-unstyled;
 
-  text-align: center;
+  //text-align: center;
 
   li {
-    display: inline-block;
+    display: block;
 
     a {
       display: block;
       padding: 5px 10px;
+      color: $white;
+
+      &:hover {
+        color: $supernova-yellow;
+      }
     }
   }
 }
 
 .footer__copy {
-  padding-top: 10px;
+  border-top: 1px solid $concrete;
+  padding-top: 40px;
   padding-bottom: 10px;
-  background-color: $light-gray;
-  font-size: 12px;
   text-align: center;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0;
+
+    &.build-by {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
 }

@@ -9,7 +9,7 @@ import 'jquery-match-height';
 import objectFitImages from 'object-fit-images';
 // import '@fancyapps/fancybox/dist/jquery.fancybox.min';
 // import { jarallax, jarallaxElement } from 'jarallax';
-// import ScrollOut from 'scroll-out';
+import ScrollOut from 'scroll-out';
 
 /**
  * Import scripts from Custom Divi blocks
@@ -65,6 +65,13 @@ function resizeVideo() {
  */
 $(document).on('ready', function () {
   /**
+   * Search
+   */
+  $('.search-button-show').on('click', function () {
+    $('.search-form').toggleClass('show');
+  });
+
+  /**
    * Make elements equal height
    */
   $('.matchHeight').matchHeight();
@@ -105,25 +112,25 @@ $(document).on('ready', function () {
   /**
    * Detect element appearance in viewport
    */
-  // ScrollOut({
-  //   offset: function() {
-  //     return window.innerHeight - 200;
-  //   },
-  //   once: true,
-  //   onShown: function(element) {
-  //     if ($(element).is('.ease-order')) {
-  //       $(element)
-  //         .find('.ease-order__item')
-  //         .each(function(i) {
-  //           let $this = $(this);
-  //           $(this).attr('data-scroll', '');
-  //           window.setTimeout(function() {
-  //             $this.attr('data-scroll', 'in');
-  //           }, 300 * i);
-  //         });
-  //     }
-  //   },
-  // });
+  ScrollOut({
+    // offset: function() {
+    //   return window.innerHeight - 200;
+    // },
+    once: false,
+    // onShown: function(element) {
+    //   if ($(element).is('.ease-order')) {
+    //     $(element)
+    //       .find('.ease-order__item')
+    //       .each(function(i) {
+    //         let $this = $(this);
+    //         $(this).attr('data-scroll', '');
+    //         window.setTimeout(function() {
+    //           $this.attr('data-scroll', 'in');
+    //         }, 300 * i);
+    //       });
+    //   }
+    // },
+  });
 
   /**
    * Remove placeholder on click

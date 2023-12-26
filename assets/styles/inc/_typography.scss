@@ -22,11 +22,21 @@ h6,
 h1,
 .h1 {
   /* basic heading styles */
+  font-family: $sub-font;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 88px */
 }
 
 h2,
 .h2 {
   /* basic heading styles */
+  font-family: $sub-font;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 62.4px */
 }
 
 h3,
@@ -47,10 +57,22 @@ h5,
 h6,
 .h6 {
   /* basic heading styles */
+  font-family: $sub-font;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 17.6px */
+  letter-spacing: 1.6px;
+  color: $sherwood-green;
 }
 
 p {
   /* basic paragraph styles */
+  font-family: $font;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px; /* 150% */
   &:empty {
     display: none;
   }
@@ -198,8 +220,34 @@ input[type='button'] {
 /* Button additional styles */
 
 .button {
+  background-color: $deep-sage;
+  text-transform: uppercase;
+  font-family: $font;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  display: block;
+  width: 100%;
+  max-width: fit-content;
+  position: relative;
+  padding: 20px 64px 16px 24px;
+  transition: all 0.5s ease-out;
+
+  &:after {
+    content: url('../../images/arrow.svg');
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+    transition: all 0.5s ease-out;
+    text-transform: uppercase;
+  }
   &:hover,
   &:focus {
     /* basic hover and focus effects */
+    padding-right: 80px;
+    background-color: $deep-sage;
   }
 }
