@@ -13,9 +13,9 @@
 <!-- BEGIN of footer -->
 <footer class="footer">
     <div class="grid-container footer-top-container">
-        <div class="grid-x ">
+        <div class="grid-x">
 
-            <div class="cell large-8">
+            <div class="cell medium-8">
                 <?php
                 if ( has_nav_menu( 'footer-menu' ) ) {
                     wp_nav_menu( array(
@@ -27,7 +27,7 @@
                 ?>
             </div>
 
-            <div class="cell large-4">
+            <div class="cell medium-4">
                 <div class="footer__logo">
                     <?php if ( $footer_logo = get_field( 'footer_logo', 'options' ) ) :
                         echo wp_get_attachment_image( $footer_logo['id'], 'medium' );

@@ -52,6 +52,11 @@ h4,
 h5,
 .h5 {
   /* basic heading styles */
+  font-family: $sub-font;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 28.8px */
 }
 
 h6,
@@ -80,6 +85,11 @@ p {
   a {
     text-decoration: underline;
   }
+}
+
+hr {
+  margin: 56px 0;
+  border-bottom: 4px solid $norway-green;
 }
 
 ul {
@@ -249,5 +259,22 @@ input[type='button'] {
     /* basic hover and focus effects */
     padding-right: 80px;
     background-color: $deep-sage;
+  }
+}
+
+.button--white {
+  background-color: $white;
+  color: $deep-sage;
+  border: 1px solid $deep-sage;
+  &:after {
+    content: url('../../images/green-aroow.svg');
+  }
+
+  &:hover,
+  &:focus {
+    /* basic hover and focus effects */
+    color: $deep-sage;
+    padding-right: 80px;
+    background-color: $white;
   }
 }

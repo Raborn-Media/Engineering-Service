@@ -4,37 +4,27 @@
  */
 get_header(); ?>
 
-<main class="main-content">
+<!-- BEGIN  hero-section -->
+<div class="hero-section" <?php bg( get_attached_img_url( get_the_ID(), 'full_hd' ) ); ?>>
     <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-            <!-- BEGIN of page content -->
-            <div class="large-8 medium-8 small-12 cell">
-                <?php if (have_posts()) : ?>
-                    <?php while (have_posts()) :
-                        the_post(); ?>
-                        <article <?php post_class('entry'); ?>>
-                            <h1 class="page-title entry__title"><?php the_title(); ?></h1>
-                            <?php if (has_post_thumbnail()) : ?>
-                                <div title="<?php the_title_attribute(); ?>" class="entry__thumb">
-                                    <?php the_post_thumbnail('large'); ?>
-                                </div>
-                            <?php endif; ?>
-                            <div class="entry__content">
-                                <?php the_content('', true); ?>
-                            </div>
-                        </article>
-                    <?php endwhile; ?>
-                <?php endif; ?>
+        <div class="grid-x">
+            <div class="cell">
+                <h1 class="page-title">
+                    <?php echo the_title();?>
+                </h1>
             </div>
-            <!-- END of page content -->
-
-            <!-- BEGIN of sidebar -->
-            <div class="large-4 medium-4 small-12 cell sidebar">
-                <?php get_sidebar('right'); ?>
-            </div>
-            <!-- END of sidebar -->
         </div>
     </div>
-</main>
+</div>
+<!-- END  hero-section -->
+
+<?php if (have_rows('flexible')) : ?>
+    <?php while (have_rows('flexible')) :
+        the_row();
+        $layout = get_row_layout(); ?>
+        <?php get_template_part('parts/flexible/flexible', $layout);
+        ?>
+    <?php endwhile; ?>
+<?php endif;?>
 
 <?php get_footer(); ?>

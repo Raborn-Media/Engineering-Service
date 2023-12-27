@@ -1,3 +1,56 @@
 /* ---------------------------------------
 	TMPL: Default
 --------------------------------------- */
+.hero-section {
+  padding: 160px 0;
+  color: $white;
+  height: 696px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 23, 15, 0.53);
+    z-index: 1;
+  }
+
+  .grid-container {
+    height: 100%;
+  }
+
+  .grid-x {
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  .page-title {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.full-width-text-section {
+  background-size: 100%;
+  padding: 120px 0 38px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: $sherwood-green;
+  }
+}
