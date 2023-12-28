@@ -1,0 +1,112 @@
+.history-section {
+  position: relative;
+  padding: 80px 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $sherwood-green;
+    z-index: -1;
+  }
+
+  &:after {
+    content: url(../../images/Polygon-1.svg);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .grid-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  h6 {
+    margin-bottom: 16px;
+    color: $norway-green;
+  }
+
+  h2 {
+    margin-bottom: 72px;
+    color: $white;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    row-gap: 72px;
+    border-left: 2px dotted;
+    border-color: rgba($norway-green, 0.5);
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .timeline-item-title {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          height: 75px;
+          width: 2px;
+          display: block;
+          top: 35px;
+          left: -2px;
+          z-index: 1;
+          background-color: $norway-green;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          width: 575px;
+          height: 2px;
+          display: block;
+          top: 110px;
+          left: -2px;
+          z-index: 1;
+          background-color: $norway-green;
+        }
+
+        h2 {
+          position: relative;
+          padding-left: 31px;
+          &:before {
+            content: '';
+            width: 17px;
+            height: 17px;
+            background-color: $norway-green;
+            position: absolute;
+            top: 50%;
+            left: -9px;
+            transform: translateY(-50%);
+            z-index: 1;
+          }
+        }
+      }
+
+      .timeline-item-content {
+        background-color: $white;
+        padding: 58px;
+        max-width: 684px;
+        position: relative;
+        z-index: 2;
+
+        .timeline-item-image {
+          img {
+            width: 100%;
+            aspect-ratio: 568/363;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

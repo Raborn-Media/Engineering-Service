@@ -1,5 +1,30 @@
 .services-section {
-  padding: 80px 0;
+  padding: 80px 0 160px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  //background-attachment: fixed;
+
+  &:after {
+    content: '';
+    position: absolute;
+    clip-path: polygon(
+      0 0,
+      48.5% 0,
+      50% 50%,
+      51.5% 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3000px;
+    height: 80px;
+    bottom: 0px;
+    z-index: 2;
+    background-color: $white;
+  }
 
   h2 {
     margin-bottom: 72px;
@@ -13,6 +38,7 @@
     align-items: flex-start;
     row-gap: 72px;
     column-gap: 40px;
+
     &__item {
       text-align: center;
       width: 100%;
@@ -22,17 +48,25 @@
       .item-title {
         color: $sherwood-green;
       }
+
       .item-subservices {
-        display: none;
+        //display: none;
         text-align: left;
         max-width: 70%;
         margin: 10px auto 0;
-        //display: grid;
-        //
-        //ol {
-        //  grid-template-rows: 0fr;
-        //  overflow: hidden;
-        //}
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.5s ease-out;
+
+        .item-subservices-wrap {
+          display: block;
+          overflow: hidden;
+          padding: 10px 0;
+        }
+        ol {
+          opacity: 0;
+          transition: all 0.5s ease-out;
+        }
         li {
           font-size: 14px;
           line-height: 1;
@@ -42,7 +76,13 @@
 
       &:hover {
         .item-subservices {
-          display: block;
+          //display: block;
+          grid-template-rows: 1fr;
+          .item-subservices-wrap {
+            ol {
+              opacity: 1;
+            }
+          }
         }
       }
     }

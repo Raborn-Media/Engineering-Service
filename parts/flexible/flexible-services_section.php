@@ -5,7 +5,7 @@ $section_subtitle = get_sub_field('section_subtitle');
 ?>
 
 <!-- BEGIN  services-section -->
-<section class="services-section">
+<section class="services-section" <?php bg($section_bg['url'], 'full_hd'); ?>>
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell text-center">
@@ -31,7 +31,7 @@ $section_subtitle = get_sub_field('section_subtitle');
                             $subservices = get_sub_field('subservices');
                             ?>
 
-                            <div class="services-list__item matchHeight ease-btm" data-scroll>
+                            <div class="services-list__item ease-btm" data-scroll>
                                 <?php if ($service_icon) : ?>
                                     <div class="item-icon">
                                         <?php echo display_svg($service_icon); ?>
@@ -46,7 +46,9 @@ $section_subtitle = get_sub_field('section_subtitle');
 
                                 <?php if ($subservices) : ?>
                                     <div class="item-subservices">
+                                    <div class="item-subservices-wrap">
                                         <?php echo $subservices; ?>
+                                    </div>
                                     </div>
                                 <?php endif; ?>
                             </div>

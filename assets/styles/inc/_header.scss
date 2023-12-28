@@ -5,6 +5,13 @@
   right: 0;
   z-index: 99;
   padding: 13px 15px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.51) 0%,
+    rgba(0, 0, 0, 0.39) 7.81%,
+    rgba(0, 0, 0, 0) 23.44%,
+    rgba(0, 0, 0, 0) 100%
+  );
 
   .menu-grid-container {
     max-width: 1360px;
@@ -130,7 +137,7 @@
 
   .top-bar {
     height: 100%;
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     .menu-main-menu-container {
       flex-grow: 1;

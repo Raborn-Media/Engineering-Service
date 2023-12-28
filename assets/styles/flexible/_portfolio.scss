@@ -1,0 +1,132 @@
+.portfolio-section {
+  padding-bottom: 80px;
+  .fluid {
+    padding: 0;
+  }
+  .portfolio-items {
+    margin-top: 72px;
+    gap: 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'a b c c'
+      'd d e e';
+
+    &__item {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: $white;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+
+      .item-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all 0.5s ease-out;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 23, 15, 0.43) 0%,
+          rgba(0, 23, 15, 0.43) 100%
+        );
+        z-index: 1;
+      }
+
+      .item-content {
+        position: relative;
+        z-index: 2;
+
+        .item-title {
+          background-color: $sherwood-green;
+          max-width: fit-content;
+          padding: 10px 16px 8px;
+          margin-bottom: 16px;
+          font-size: 16px;
+        }
+
+        .item-subtitle {
+          font-size: 24px;
+        }
+      }
+
+      &:first-child {
+        grid-area: a;
+        height: 500px;
+      }
+
+      &:nth-child(2) {
+        grid-area: b;
+        height: 500px;
+      }
+
+      &:nth-child(3) {
+        grid-area: c;
+        height: 500px;
+      }
+
+      &:nth-child(4) {
+        grid-area: d;
+        height: 335px;
+      }
+
+      &:nth-child(5) {
+        grid-area: e;
+        height: 335px;
+      }
+
+      &:hover {
+        .item-bg {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    @include breakpoint(1200px down) {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+        'a a b b'
+        'c c c c'
+        'd d e e';
+      &__item {
+        height: 300px !important;
+      }
+    }
+    @include breakpoint(medium down) {
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        'a a a a'
+        'b b b b'
+        'c c c c'
+        'd d d d'
+        'e e e e';
+      &__item {
+        height: 300px !important;
+      }
+    }
+  }
+}

@@ -226,12 +226,17 @@ add_action(
         }
         ob_start(); ?>
         <style type="text/css">
+            .login #login h1 {
+                background: rgba(0, 23, 15, 0.53);
+                padding: 25px 15px;
+            }
             .login #login h1 a {
                 background-image: url('<?php echo $custom_logo_src; ?>');
                 background-size: contain;
                 background-position: 50% 50%;
                 width: auto;
                 height: 120px;
+                margin-bottom: 0;
             }
 
             body.login {

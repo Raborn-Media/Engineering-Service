@@ -278,3 +278,7 @@ input[type='button'] {
     background-color: $white;
   }
 }
+
+.grid-x.row-reverse {
+  flex-direction: row-reverse;
+}
