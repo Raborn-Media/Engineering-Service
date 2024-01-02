@@ -19,3 +19,44 @@
     }
   }
 }
+
+.custom-breadcrumbs {
+  margin-bottom: 50px;
+
+  a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+    //letter-spacing: 2.8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    color: $black;
+
+    &:hover {
+      color: $deep-sage;
+    }
+  }
+
+  .fa-chevron-right {
+    margin: 0 3px;
+    font-size: 12px;
+  }
+
+  .home-url {
+    font-size: 0;
+
+    &:before {
+      content: '\f015';
+      font-size: 16px;
+      font-family: $fa;
+      color: $white;
+      -webkit-text-stroke: 1px $black;
+    }
+
+    &:hover {
+      &:before {
+        -webkit-text-stroke: 1px $deep-sage;
+      }
+    }
+  }
+}

@@ -7,12 +7,12 @@
   padding: 13px 15px;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.51) 0%,
-    rgba(0, 0, 0, 0.39) 7.81%,
-    rgba(0, 0, 0, 0) 23.44%,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0.35) 30%,
+    rgba(0, 0, 0, 0.3) 70%,
     rgba(0, 0, 0, 0) 100%
   );
-
   .menu-grid-container {
     max-width: 1360px;
   }
@@ -20,6 +20,22 @@
 
 .admin-bar .header {
   top: 32px;
+}
+.single .header {
+  position: relative;
+  background: $white;
+
+  li {
+    > a {
+      color: $sherwood-green !important;
+    }
+
+    &.is-active > a {
+      /* Parent link style on dropdown hover */
+      //background: $white;
+      color: $norway-green;
+    }
+  }
 }
 .logo {
   h1 {

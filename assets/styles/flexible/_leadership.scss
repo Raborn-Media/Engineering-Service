@@ -12,51 +12,83 @@
   article {
     margin-bottom: 72px;
   }
+}
+
+.leaders-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+
+  &__leader {
+    width: 100%;
+    max-width: 308px;
+
+    a {
+      color: $sherwood-green;
+    }
+
+    .leader-photo {
+      margin-bottom: 24px;
+    }
+
+    .leader-name {
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 27px; /* 150% */
+    }
+
+    p {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 27px; /* 150% */
+    }
+  }
+
+  @include breakpoint(medium down) {
+    &__leader {
+      max-width: calc(50% - 20px);
+    }
+  }
+  @include breakpoint(small down) {
+    &__leader {
+      max-width: 100%;
+    }
+  }
+}
+
+.single-team {
+  .single-leaders-list {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+
+    .top-graphics {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 100%;
+
+      &:before {
+        content: '';
+        width: 388px;
+        height: 1px;
+        background-color: $sherwood-green;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
 
   .leaders-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-
-    &__leader {
-      width: 100%;
-      max-width: 308px;
-
-      a {
-        color: $sherwood-green;
-      }
-
-      .leader-photo {
-        margin-bottom: 24px;
-      }
-
-      .leader-name {
-        margin-bottom: 16px;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 27px; /* 150% */
-      }
-
-      p {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 27px; /* 150% */
-      }
-    }
-
-    @include breakpoint(medium down) {
-      &__leader {
-        max-width: calc(50% - 20px);
-      }
-    }
-    @include breakpoint(small down) {
-      &__leader {
-        max-width: 100%;
-      }
-    }
+    justify-content: center;
+    gap: 72px;
   }
 }

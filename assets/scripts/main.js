@@ -7,7 +7,7 @@ import './plugins/modernizr.min';
 import 'slick-carousel';
 import 'jquery-match-height';
 import objectFitImages from 'object-fit-images';
-// import '@fancyapps/fancybox/dist/jquery.fancybox.min';
+import '@fancyapps/fancybox/dist/jquery.fancybox.min';
 // import { jarallax, jarallaxElement } from 'jarallax';
 import ScrollOut from 'scroll-out';
 
@@ -86,20 +86,20 @@ $(document).on('ready', function () {
   /**
    * Add fancybox to images
    */
-  // $('.gallery-item')
-  //   .find('a[href$="jpg"], a[href$="png"], a[href$="gif"]')
-  //   .attr('rel', 'gallery')
-  //   .attr('data-fancybox', 'gallery');
-  // $(
-  //   '.fancybox, a[rel*="album"], a[href$="jpg"], a[href$="png"], a[href$="gif"]'
-  // ).fancybox({
-  //   minHeight: 0,
-  //   helpers: {
-  //     overlay: {
-  //       locked: false,
-  //     },
-  //   },
-  // });
+  $('.gallery-item')
+    .find('a[href$="jpg"], a[href$="png"], a[href$="gif"]')
+    .attr('rel', 'gallery')
+    .attr('data-fancybox', 'gallery');
+  $(
+    '.fancybox, a[rel*="album"], a[href$="jpg"], a[href$="png"], a[href$="gif"]'
+  ).fancybox({
+    minHeight: 0,
+    helpers: {
+      overlay: {
+        locked: false,
+      },
+    },
+  });
 
   /**
    * Init parallax

@@ -35,7 +35,7 @@ $section_bg     = get_sub_field( 'section_bg' );
                                 $list_icon = get_sub_field( 'list_icon' );
                                 $list_text = get_sub_field( 'list_text' );
                                 ?>
-                                <div class="section-list__item">
+                                <div class="section-list__item ease-btm" data-scroll>
                                     <div class="list-icon">
                                         <?php echo display_svg( $list_icon ); ?>
                                     </div>

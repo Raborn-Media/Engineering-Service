@@ -74,6 +74,11 @@ add_filter(
                     'selector' => 'p,h1,h2,h3,h4,h5,h6,ul',
                 ],
                 [
+                    'title' => 'Green square',
+                    'classes' => 'green-square',
+                    'selector' => 'p',
+                ],
+                [
                     'title' => 'Justify',
                     'classes' => 'text-align-justify',
                     'selector' => 'p,h1,h2,h3,h4,h5,h6,ul',

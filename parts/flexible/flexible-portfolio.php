@@ -30,7 +30,7 @@ $section_subtitle = get_sub_field( 'section_subtitle' );
                             $item_subtitle = get_sub_field( 'item_subtitle' );
                             $item_bg = get_sub_field( 'item_bg' );
                             ?>
-                            <div class="portfolio-items__item">
+                            <a href="<?php echo $item_bg['url']?>" class="portfolio-items__item gallery-item" data-fancybox="gallery">
                                 <div class="item-bg">
                                     <?php echo wp_get_attachment_image($item_bg['id'], 'large');?>
                                 </div>
@@ -46,7 +46,7 @@ $section_subtitle = get_sub_field( 'section_subtitle' );
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                            </div>
+                            </a>
                         <?php endwhile; ?>
                     </div>
                 <?php endif; ?>

@@ -47,6 +47,10 @@ h3,
 h4,
 .h4 {
   /* basic heading styles */
+  font-family: $sub-font;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 130%; /* 41.6px */
 }
 
 h5,
