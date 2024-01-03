@@ -282,6 +282,23 @@ input[type='button'] {
     background-color: $white;
   }
 }
+.button--downArrow {
+  padding: 20px 56px 16px 24px;
+  transition: all 0.5s ease-out;
+  &:after {
+    content: url('../../images/green-aroow.svg');
+    transform: rotate(90deg) translate(-25%, -50%);
+    transform-origin: center;
+  }
+
+  &:hover,
+  &:focus {
+    /* basic hover and focus effects */
+    color: $deep-sage;
+    padding-right: 60px;
+    background-color: $white;
+  }
+}
 
 .grid-x.row-reverse {
   flex-direction: row-reverse;
