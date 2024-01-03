@@ -71,6 +71,24 @@ $(document).on('ready', function () {
     $('.search-form').toggleClass('show');
   });
 
+  // Smooth scroll function
+  $('.scroll-btn').on('click', function (event) {
+    if (this.hash !== '') {
+      event.preventDefault();
+      let target = this.hash;
+      let topOffset = 80; // Adjust this value according to your layout if you have a fixed header
+      $('html, body').animate(
+        {
+          scrollTop: $(target).offset().top - topOffset,
+        },
+        800,
+        function () {
+          window.location.hash = target;
+        }
+      );
+    }
+  });
+
   /**
    * Make elements equal height
    */

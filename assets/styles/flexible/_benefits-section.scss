@@ -1,0 +1,66 @@
+.benefits-section {
+  background-color: $concrete;
+  padding: 120px 0 200px;
+  overflow: hidden;
+
+  .benefits-col {
+    padding-right: 80px;
+  }
+
+  .benefits {
+    padding: 32px;
+    background-color: $white;
+    max-width: 341px;
+
+    h6 {
+      margin-bottom: 22px;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 24px;
+      li {
+        margin-bottom: 22px;
+        position: relative;
+
+        &:before {
+          content: '';
+          width: 8px;
+          height: 8px;
+          display: block;
+          background-color: $norway-green;
+          position: absolute;
+          left: -24px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .how-to-apply {
+    h6 {
+      margin-bottom: 32px;
+    }
+    ol {
+      margin-left: 24px;
+      li {
+        margin-bottom: 22px;
+        padding-left: 19px;
+        &::marker {
+          color: $sherwood-green;
+          font-size: 16px;
+        }
+
+        strong {
+          color: $sherwood-green;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

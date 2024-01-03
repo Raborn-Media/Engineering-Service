@@ -64,7 +64,7 @@ $section_button   = get_sub_field( 'section_button' );
 
                 <?php if ( $section_button ) : ?>
                     <a href="<?php echo $section_button['url']; ?>"
-                       class="button button--white button--downArrow">
+                       class="button button--white button--downArrow scroll-btn">
                         <?php echo $section_button['title']; ?>
                     </a>
                 <?php endif; ?>

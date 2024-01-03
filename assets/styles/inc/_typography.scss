@@ -96,12 +96,17 @@ hr {
   border-bottom: 4px solid $norway-green;
 }
 
+ol,
 ul {
   /* basic list styles */
   font-size: inherit;
 
   li {
     /* basic list-item styles */
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 150% */
   }
 }
 
@@ -302,4 +307,29 @@ input[type='button'] {
 
 .grid-x.row-reverse {
   flex-direction: row-reverse;
+}
+
+.bottom-graphics {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    clip-path: polygon(
+      0 0,
+      48.5% 0,
+      50% 30%,
+      51.5% 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3000px;
+    height: 80px;
+    bottom: 0px;
+    z-index: 2;
+    background-color: $white;
+  }
 }
