@@ -64,6 +64,14 @@ function resizeVideo() {
  * Scripts which runs after DOM load
  */
 $(document).on('ready', function () {
+  $('.menu-icon').on('click', function () {
+    var headerHeight = $('.header').outerHeight();
+    $('.top-bar').css('top', headerHeight);
+    if ($('body').hasClass('admin-bar')) {
+      $('.top-bar').css('top', headerHeight + 46);
+    }
+  });
+
   /**
    * Search
    */

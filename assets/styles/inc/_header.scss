@@ -51,7 +51,7 @@
   }
 }
 
-@include breakpoint(small down) {
+@include breakpoint(medium down) {
   /* TOP BAR Mobile STYLING */
 
   .menu-grid-container {
@@ -70,21 +70,37 @@
     }
   }
 
-  //.title-bar {
-  //  line-height: 45px;
-  //
-  //  .menu-icon {
-  //    padding: 0;
-  //    border: none;
-  //    background-color: transparent;
-  //
-  //    //@include menu-icon($white, $white, 30px, 24px, 3px);
-  //  }
-  //}
+  .title-bar {
+    line-height: 45px;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    padding: 0 20px;
+
+    .menu-icon {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+
+      @include menu-icon($white, $white, 30px, 24px, 3px);
+
+      &:after {
+        display: none;
+      }
+    }
+  }
 
   .top-bar {
     display: none;
-    background: $primary-color; /* menu list background color */
+    position: absolute;
+    width: 95vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $sherwood-green;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
   }
 
   .header-menu {
@@ -92,15 +108,16 @@
 
     li {
       > a {
-        background: $primary-color; /* menu item background color */
+        background: transparent; /* menu item background color */
         color: $white; /* menu item text color */
         line-height: 45px;
 
+        &:hover,
         &:focus {
           &,
           & + .submenu-toggle {
             background: darken(
-              $primary-color,
+              $sherwood-green,
               5
             ); /* menu item background color on hover */
           }
@@ -113,7 +130,7 @@
         > a,
         .submenu-toggle {
           background: lighten(
-            $primary-color,
+            $sherwood-green,
             5
           ); /* current/parent menu item background color */
         }
@@ -123,7 +140,7 @@
         > a,
         .submenu-toggle {
           background: darken(
-            $primary-color,
+            transparent,
             3
           ); /* menu item background color on open dropdown */
         }
@@ -148,7 +165,7 @@
   }
 }
 
-@include breakpoint(medium) {
+@include breakpoint(large) {
   /* TOP BAR STYLING */
 
   .top-bar {
@@ -185,7 +202,7 @@
 
         &:hover {
           /* menu item style on hover */
-          //background: $primary-color;
+          //background: transparent;
           color: $supernova-yellow;
         }
       }
@@ -195,7 +212,7 @@
       &.current_page_parent {
         > a {
           /* Style of Current page and Ancestor page */
-          //background: $primary-color;
+          //background: transparent;
           color: $supernova-yellow;
         }
       }
@@ -227,12 +244,12 @@
         > a {
           /* Regular link in dropdown */
           background: $white;
-          color: $primary-color;
+          color: transparent;
           line-height: 30px;
 
           &:hover {
             /* Dropdown link on hover */
-            background: lighten($primary-color, 10);
+            background: lighten(transparent, 10);
             color: $white;
           }
         }
@@ -241,7 +258,7 @@
         &.current_page_ancestor,
         &.current_page_parent {
           > a {
-            background: lighten($primary-color, 10);
+            background: lighten(transparent, 10);
             color: $white;
           }
         }
@@ -276,16 +293,28 @@
     width: 300px;
     top: 120%;
     display: none;
+    z-index: 11;
 
     .search {
       //width: 250px;
       input {
-        //border-radius: 9px 0;
+        border-radius: 8px;
       }
     }
   }
 
   .search-form.show {
     display: block;
+  }
+
+  @include breakpoint(medium down) {
+    .search-button-show {
+      margin-right: 30px;
+      .fa-magnifying-glass {
+        &:before {
+          font-size: 24px;
+        }
+      }
+    }
   }
 }

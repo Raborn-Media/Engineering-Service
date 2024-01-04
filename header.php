@@ -35,29 +35,37 @@
 <!-- BEGIN of header -->
 <header class="header">
     <div class="grid-container menu-grid-container">
-        <div class="grid-x grid-margin-x">
-            <div class="medium-4 small-12 cell">
+        <div class="grid-x">
+            <div class="medium-4 small-5 cell">
                 <div class="logo text-center medium-text-left">
                     <h1>
                         <?php show_custom_logo(); ?><span class="show-for-sr"><?php echo get_bloginfo('name'); ?></span>
                     </h1>
                 </div>
             </div>
-            <div class="medium-8 small-12 cell">
+            <div class="medium-8 small-7 cell">
                 <?php if (has_nav_menu('header-menu')) : ?>
-                    <div class="title-bar hide-for-medium" data-responsive-toggle="main-menu" data-hide-for="medium">
+                    <div class="title-bar hide-for-large" data-responsive-toggle="main-menu" data-hide-for="large">
+                        <div class="search-form-container">
+                            <button class="search-button-show">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <div class="search-form">
+                                <?php get_search_form(); ?>
+                            </div>
+                        </div>
                         <button class="menu-icon" type="button" data-toggle aria-label="Menu" aria-controls="main-menu">
                             <span></span></button>
-                        <div class="title-bar-title">Menu</div>
+<!--                        <div class="title-bar-title">Menu</div>-->
                     </div>
                     <nav class="top-bar" id="main-menu">
                         <?php wp_nav_menu(array(
                             'theme_location' => 'header-menu',
                             'menu_class' => 'menu header-menu',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true" data-multi-open="false" data-close-on-click-inside="false">%3$s</ul>',
+                            'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion large-dropdown" data-submenu-toggle="true" data-multi-open="false" data-close-on-click-inside="false">%3$s</ul>',
                             'walker' => new theme\FoundationNavigation()
                         )); ?>
-                        <div class="search-form-container">
+                        <div class="search-form-container show-for-large">
                             <button class="search-button-show">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
