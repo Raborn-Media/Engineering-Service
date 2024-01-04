@@ -5,7 +5,7 @@ $section_subtitle = get_sub_field('section_subtitle');
 ?>
 
 <!-- BEGIN  services-section -->
-<section class="services-section" <?php bg($section_bg['url'], 'full_hd'); ?>>
+<section class="services-section bottom-graphics" <?php bg($section_bg['url'], 'full_hd'); ?>>
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell text-center">

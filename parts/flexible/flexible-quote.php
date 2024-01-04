@@ -4,7 +4,7 @@ $section_bg   = get_sub_field( 'section_bg' );
 ?>
 
 <!-- BEGIN  quote-section -->
-<section class="quote-section">
+<section class="quote-section bottom-graphics">
     <?php echo wp_get_attachment_image( $section_bg['id'], 'full_hd', false, ['class' => 'section-bg-image'] ); ?>
 <!--    <div class="section-bg-image">-->
 <!--        --><?php //echo wp_get_attachment_image( $section_bg['id'], 'full_hd' ); ?>

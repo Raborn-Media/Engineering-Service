@@ -5,26 +5,26 @@
   position: relative;
   //background-attachment: fixed;
 
-  &:after {
-    content: '';
-    position: absolute;
-    clip-path: polygon(
-      0 0,
-      48.5% 0,
-      50% 50%,
-      51.5% 0,
-      100% 0,
-      100% 100%,
-      0 100%
-    );
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3000px;
-    height: 80px;
-    bottom: 0px;
-    z-index: 2;
-    background-color: $white;
-  }
+  //&:after {
+  //  content: '';
+  //  position: absolute;
+  //  clip-path: polygon(
+  //    0 0,
+  //    48.5% 0,
+  //    50% 50%,
+  //    51.5% 0,
+  //    100% 0,
+  //    100% 100%,
+  //    0 100%
+  //  );
+  //  left: 50%;
+  //  transform: translateX(-50%);
+  //  width: 3000px;
+  //  height: 80px;
+  //  bottom: 0px;
+  //  z-index: 2;
+  //  background-color: $white;
+  //}
 
   h2 {
     margin-bottom: 72px;

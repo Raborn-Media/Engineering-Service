@@ -311,6 +311,7 @@ input[type='button'] {
 
 .bottom-graphics {
   position: relative;
+  overflow: hidden;
 
   &:after {
     content: '';
