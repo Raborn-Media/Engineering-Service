@@ -19,7 +19,7 @@
   }
 
   .section-container {
-    padding: 75px 0 80px;
+    padding: 75px 15px 80px;
     position: relative;
 
     &:before {
@@ -37,6 +37,9 @@
       &:before {
         display: none;
       }
+    }
+    @include breakpoint(medium down) {
+      padding: 40px 25px;
     }
   }
 
@@ -78,6 +81,9 @@
         }
       }
     }
+    @include breakpoint(small down) {
+      margin-bottom: 30px;
+    }
   }
   .section-image {
     margin-left: 10px;
@@ -111,6 +117,11 @@
     .section-image {
       margin-left: 0;
       margin-right: 10px;
+    }
+    @include breakpoint(medium down) {
+      .text-col {
+        padding-left: 0;
+      }
     }
   }
 }

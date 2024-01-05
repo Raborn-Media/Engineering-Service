@@ -14,7 +14,7 @@ $section_bg     = get_sub_field( 'section_bg' );
     <div class="section-bg" <?php bg($section_bg['url'], 'full_hd'); ?>></div>
     <div class="grid-container section-container <?php echo $content_position ? 'section-container--no-top-graphics' : '';?>">
         <div class="grid-x <?php echo $content_position ? 'row-reverse' : '';?>">
-            <div class="cell large-6 text-col">
+            <div class="cell medium-6 text-col">
                 <?php if ( $section_subtitle ) : ?>
                     <h6>
                         <?php echo $section_subtitle; ?>
@@ -64,7 +64,7 @@ $section_bg     = get_sub_field( 'section_bg' );
                 <?php endif; ?>
             </div>
 
-            <div class="cell large-6">
+            <div class="cell medium-6">
                 <?php if ( $section_image ) : ?>
                     <div class="section-image ease-btm" data-scroll>
                         <?php echo wp_get_attachment_image( $section_image['id'], 'large' ); ?>

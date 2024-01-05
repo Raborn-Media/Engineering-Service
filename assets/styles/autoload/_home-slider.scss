@@ -78,16 +78,6 @@
   height: 905px; /* define the height of slide */
   transition: height 0.3s ease;
   position: relative;
-  //&:before {
-  //  content: '';
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  bottom: 0;
-  //  width: 62%;
-  //  background: rgba(0, 23, 15, 0.83);
-  //  z-index: 10;
-  //}
 
   @include breakpoint(medium down) {
     height: 600px;

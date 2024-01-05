@@ -48,6 +48,11 @@
       select {
         padding: 12px 16px;
       }
+      @include breakpoint(small down) {
+        .gform_fields {
+          grid-column-gap: 0;
+        }
+      }
     }
     .gform_footer {
       justify-content: flex-end;
