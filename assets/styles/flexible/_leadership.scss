@@ -23,7 +23,11 @@
 
   &__leader {
     width: 100%;
-    max-width: 308px;
+    //max-width: 308px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
 
     a {
       color: $sherwood-green;
@@ -31,6 +35,12 @@
 
     .leader-photo {
       margin-bottom: 24px;
+      width: 100%;
+      max-width: calc(30% - 30px);
+    }
+    .leader-info {
+      width: 100%;
+      max-width: calc(70% - 30px);
     }
 
     .leader-name {

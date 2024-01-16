@@ -78,36 +78,36 @@ $info_section_bg = get_field( 'info_section_bg' );
     </div>
 </section>
 
-<section class="form-section">
-    <div class="grid-container">
-        <div class="grid-x">
-            <div class="cell text-center">
-                <div class="section-heading">
-                    <?php if ( $section_subtitle = get_field( 'contact_form_subtitle' ) ) : ?>
-                        <h6>
-                            <?php echo $section_subtitle; ?>
-                        </h6>
-                    <?php endif; ?>
-
-                    <?php if ( $section_title = get_field( 'contact_form_title' ) ) : ?>
-                        <h2 class="">
-                            <?php echo $section_title; ?>
-                        </h2>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-        <div class="grid-x">
-            <div class="cell">
-                <?php $contact_form = get_field( 'contact_form' ); ?>
-                <?php if ( class_exists( 'GFAPI' ) && ! empty( $contact_form ) && is_array( $contact_form ) ) : ?>
-                    <div class="contact__form">
-                        <?php echo do_shortcode( "[gravityform id='{$contact_form['id']}' title='false' description='false' ajax='true']" ); ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section class="form-section">-->
+<!--    <div class="grid-container">-->
+<!--        <div class="grid-x">-->
+<!--            <div class="cell text-center">-->
+<!--                <div class="section-heading">-->
+<!--                    --><?php //if ( $section_subtitle = get_field( 'contact_form_subtitle' ) ) : ?>
+<!--                        <h6>-->
+<!--                            --><?php //echo $section_subtitle; ?>
+<!--                        </h6>-->
+<!--                    --><?php //endif; ?>
+<!---->
+<!--                    --><?php //if ( $section_title = get_field( 'contact_form_title' ) ) : ?>
+<!--                        <h2 class="">-->
+<!--                            --><?php //echo $section_title; ?>
+<!--                        </h2>-->
+<!--                    --><?php //endif; ?>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="grid-x">-->
+<!--            <div class="cell">-->
+<!--                --><?php //$contact_form = get_field( 'contact_form' ); ?>
+<!--                --><?php //if ( class_exists( 'GFAPI' ) && ! empty( $contact_form ) && is_array( $contact_form ) ) : ?>
+<!--                    <div class="contact__form">-->
+<!--                        --><?php //echo do_shortcode( "[gravityform id='{$contact_form['id']}' title='false' description='false' ajax='true']" ); ?>
+<!--                    </div>-->
+<!--                --><?php //endif; ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <?php get_footer(); ?>
