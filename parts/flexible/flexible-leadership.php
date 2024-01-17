@@ -50,11 +50,6 @@ $section_text     = get_sub_field( 'section_text' );
                                                 <?php echo $member_position; ?>
                                             </p>
                                         <?php endif; ?>
-                                        <?php if ( $short_description = get_field( 'short_description' ) ) : ?>
-                                            <div class="short-description">
-                                                <?php echo $short_description; ?>
-                                            </div>
-                                        <?php endif; ?>
                                         <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
                                             <div class="entry__content clearfix">
                                                 <?php the_content( '', true ); ?>

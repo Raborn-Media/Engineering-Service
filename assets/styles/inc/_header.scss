@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -146,6 +150,9 @@
         }
       }
     }
+    .external-link a {
+      color: $supernova-yellow;
+    }
 
     .submenu-toggle {
       padding: 0;
@@ -213,7 +220,7 @@
         > a {
           /* Style of Current page and Ancestor page */
           //background: transparent;
-          color: $supernova-yellow;
+          //color: $supernova-yellow;
         }
       }
 
@@ -228,6 +235,9 @@
         //background: $white;
         color: $supernova-yellow;
       }
+    }
+    .external-link a {
+      color: $supernova-yellow;
     }
 
     /* Dropdown item styling */

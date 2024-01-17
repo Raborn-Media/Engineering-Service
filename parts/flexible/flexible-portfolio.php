@@ -23,32 +23,48 @@ $section_subtitle = get_sub_field( 'section_subtitle' );
         </div>
         <div class="grid-x">
             <div class="cell">
-                <?php if ( have_rows( 'portfolio_items' ) ) : ?>
-                    <div class="portfolio-items">
-                        <?php while ( have_rows( 'portfolio_items' ) ) : the_row();
-                            $item_title = get_sub_field( 'item_title' );
-                            $item_subtitle = get_sub_field( 'item_subtitle' );
-                            $item_bg = get_sub_field( 'item_bg' );
-                            ?>
-                            <a href="<?php echo $item_bg['url']?>" class="portfolio-items__item gallery-item" data-fancybox="gallery">
-                                <div class="item-bg">
-                                    <?php echo wp_get_attachment_image($item_bg['id'], 'large');?>
-                                </div>
-                                <div class="item-content">
-                                    <?php if ( $item_title ) : ?>
-                                        <div class="item-title">
-                                            <?php echo $item_title; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ( $item_subtitle ) : ?>
-                                        <div class="item-subtitle">
-                                            <?php echo $item_subtitle; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            </a>
-                        <?php endwhile; ?>
-                    </div>
+                <?php
+                $args  = array(
+                	'post_type'      => 'portfolio',
+                	'order'          => 'ASC', // ASC, DESC
+                	'orderby'        => 'rand', // none, ID, author, title, name, date, modified, parent, rand, comment_count, menu_order, meta_value, meta_value_num, title menu_order, post__in
+                	'posts_per_page' => 5,
+
+                );
+                ?>
+
+                <?php $the_query = new WP_Query( $args ); ?>
+
+                <?php if ( $the_query->have_posts() ) : ?>
+                <div class="portfolio-items">
+
+                <!-- the loop -->
+                	<?php while ( $the_query->have_posts() ) : $the_query->the_post();
+                    $portfolio_item_cat = get_field('portfolio_item_cat');
+                    ?>
+                        <a href="<?php the_post_thumbnail_url(); ?>" class="portfolio-items__item gallery-item" data-fancybox="gallery">
+                            <div class="item-bg">
+<!--                                --><?php //echo wp_get_attachment_image($item_bg['id'], 'large');?>
+                                <?php the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); ?>
+                            </div>
+                            <div class="item-content">
+                                <?php if ( $portfolio_item_cat ) : ?>
+                                    <div class="item-title">
+                                        <?php echo $portfolio_item_cat; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                    <div class="item-subtitle">
+                                        <?php the_title(); ?>
+                                    </div>
+                            </div>
+                        </a>
+
+                	<?php endwhile; ?>
+                    <!-- end of the loop -->
+                	<?php wp_reset_postdata(); ?>
+                </div>
+
                 <?php endif; ?>
             </div>
         </div>

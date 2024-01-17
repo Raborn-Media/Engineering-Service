@@ -11,6 +11,9 @@
 
   article {
     margin-bottom: 72px;
+    .entry__content {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -27,7 +30,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 30px;
+    gap: 50px;
 
     a {
       color: $sherwood-green;
@@ -36,11 +39,12 @@
     .leader-photo {
       margin-bottom: 24px;
       width: 100%;
-      max-width: calc(30% - 30px);
+      max-width: calc(35% - 50px);
     }
     .leader-info {
       width: 100%;
-      max-width: calc(70% - 30px);
+      //max-width: calc(60% + 50px);
+      max-width: 65%;
     }
 
     .leader-name {
@@ -59,14 +63,19 @@
     }
   }
 
-  @include breakpoint(medium down) {
-    &__leader {
-      max-width: calc(50% - 20px);
-    }
-  }
   @include breakpoint(small down) {
     &__leader {
-      max-width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .leader-info,
+      .leader-photo {
+        max-width: 100%;
+
+        article {
+          margin-bottom: 50px;
+        }
+      }
     }
   }
 }
