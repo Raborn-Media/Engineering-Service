@@ -2,6 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.home .header {
+  background: rgba(0, 23, 15, 0.83);
+  position: unset;
+}
+
 .header {
   position: absolute;
   top: 0;

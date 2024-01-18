@@ -265,7 +265,7 @@ add_shortcode( 'slider', function () {
                         <div class="home-slide__caption">
                             <div class="grid-container">
                                 <div class="grid-x">
-                                    <div class="cell large-6">
+                                    <div class="cell large-5">
                                         <div class="slide-content">
                                             <h2><?php the_title(); ?></h2>
                                             <article>
