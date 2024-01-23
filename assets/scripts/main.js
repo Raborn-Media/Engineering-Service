@@ -253,10 +253,20 @@ $(window).on('resize', function () {
 
   resizeVideo();
 });
+const header = $('.header');
 
 /**
  * Scripts which runs on scrolling
  */
 $(window).on('scroll', function () {
   // jQuery code goes here
+
+  const scrollPosition = $(window).scrollTop();
+  const headerHeight = header.outerHeight();
+
+  if (scrollPosition >= headerHeight) {
+    header.addClass('active');
+  } else {
+    header.removeClass('active');
+  }
 });
