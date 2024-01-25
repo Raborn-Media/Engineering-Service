@@ -24,11 +24,13 @@ $section_subtitle = get_sub_field( 'section_subtitle' );
         <div class="grid-x">
             <div class="cell">
                 <?php
-                $args  = array(
-                	'post_type'      => 'portfolio',
-                	'order'          => 'ASC', // ASC, DESC
-                	'orderby'        => 'rand', // none, ID, author, title, name, date, modified, parent, rand, comment_count, menu_order, meta_value, meta_value_num, title menu_order, post__in
-                	'posts_per_page' => 5,
+                $args = array(
+                    'post_type'      => 'portfolio',
+                    'order'          => 'ASC',
+                    // ASC, DESC
+                    'orderby'        => 'rand',
+                    // none, ID, author, title, name, date, modified, parent, rand, comment_count, menu_order, meta_value, meta_value_num, title menu_order, post__in
+                    'posts_per_page' => - 1,
 
                 );
                 ?>
@@ -36,35 +38,36 @@ $section_subtitle = get_sub_field( 'section_subtitle' );
                 <?php $the_query = new WP_Query( $args ); ?>
 
                 <?php if ( $the_query->have_posts() ) : ?>
-                <div class="portfolio-items">
+                    <div class="portfolio-items">
 
-                <!-- the loop -->
-                	<?php while ( $the_query->have_posts() ) : $the_query->the_post();
-                    $portfolio_item_cat = get_field('portfolio_item_cat');
-                    ?>
-                        <a href="<?php the_post_thumbnail_url(); ?>" class="portfolio-items__item gallery-item" data-fancybox="gallery">
-                            <div class="item-bg">
-<!--                                --><?php //echo wp_get_attachment_image($item_bg['id'], 'large');?>
-                                <?php the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); ?>
-                            </div>
-                            <div class="item-content">
-                                <?php if ( $portfolio_item_cat ) : ?>
+                        <!-- the loop -->
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+                            $portfolio_item_cat = get_field( 'portfolio_item_cat' );
+                            $show_item_cat      = get_field( 'show_item_cat' );
+                            ?>
+                            <a href="
+                <?php the_post_thumbnail_url(); ?>" class="portfolio-items__item gallery-item" data-fancybox="gallery">
+                                <div class="item-bg">
+                                    <?php the_post_thumbnail( 'full', array( 'class' => 'img-responsive' ) ); ?>
+                                </div>
+                                <div class="item-content">
                                     <div class="item-title">
-                                        <?php echo $portfolio_item_cat; ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                    <div class="item-subtitle">
                                         <?php the_title(); ?>
                                     </div>
-                            </div>
-                        </a>
 
-                	<?php endwhile; ?>
-                    <!-- end of the loop -->
-                	<?php wp_reset_postdata(); ?>
-                </div>
+                                    <?php if ( $show_item_cat == true && $portfolio_item_cat ) : ?>
+                                        <div class="item-subtitle">
+                                            <?php echo $portfolio_item_cat; ?>
+                                        </div>
+                                    <?php endif; ?>
 
+                                </div>
+                            </a>
+
+                        <?php endwhile; ?>
+                        <!-- end of the loop -->
+                        <?php wp_reset_postdata(); ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

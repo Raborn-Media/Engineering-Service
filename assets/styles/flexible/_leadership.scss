@@ -40,6 +40,10 @@
       margin-bottom: 24px;
       width: 100%;
       max-width: calc(35% - 50px);
+      img {
+        aspect-ratio: 1/1.1;
+        object-fit: cover;
+      }
     }
     .leader-info {
       width: 100%;
