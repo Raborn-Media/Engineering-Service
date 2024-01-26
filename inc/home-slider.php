@@ -263,7 +263,7 @@ add_shortcode( 'slider', function () {
                         <?php endif; ?>
 
                         <div class="home-slide__caption">
-                            <div class="grid-container">
+                            <div class="grid-container fluid">
                                 <div class="grid-x">
                                     <div class="cell large-5">
                                         <div class="slide-content">

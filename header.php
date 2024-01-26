@@ -34,7 +34,7 @@
 
 <!-- BEGIN of header -->
 <header class="header">
-    <div class="grid-container menu-grid-container">
+    <div class="grid-container menu-grid-container fluid">
         <div class="grid-x">
             <div class="medium-4 small-5 cell">
                 <div class="logo text-center medium-text-left">
