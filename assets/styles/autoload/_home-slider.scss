@@ -129,7 +129,8 @@
 
         @include breakpoint(1140px) {
           .large-5 {
-            padding: 80px 80px 80px 20px;
+            //padding: 80px 80px 80px 20px;
+            padding: 80px;
           }
         }
       }
