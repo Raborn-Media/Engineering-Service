@@ -49,10 +49,12 @@ $section_subtitle = get_sub_field( 'section_subtitle' );
                             $portfolio_item_cat = get_field( 'portfolio_item_cat', $featured_post->ID );
                             $show_item_cat      = get_field( 'show_item_cat', $featured_post->ID );
                             $image              = get_the_post_thumbnail( $featured_post->ID, 'full', array( 'class' => 'img-responsive' ) );
+                            $image_url              = get_the_post_thumbnail_url( $featured_post->ID);
                             ?>
 
-                            <a href="
-                            <?php the_post_thumbnail_url(); ?>" class="portfolio-items__item gallery-item"
+                            <a
+                                href="<?php echo $image_url; ?>"
+                               class="portfolio-items__item gallery-item"
                                data-fancybox>
                                 <div class="item-bg">
                                     <?php echo $image; ?>

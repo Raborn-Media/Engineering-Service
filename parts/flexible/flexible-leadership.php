@@ -37,7 +37,7 @@ $section_text     = get_sub_field( 'section_text' );
                             setup_postdata( $post );
                             $member_position = get_field( 'member_position' );
                             ?>
-                            <div class="leaders-list__leader">
+                            <div class="leaders-list__leader ">
                                     <div class="leader-photo">
                                         <?php the_post_thumbnail(); ?>
                                     </div>
