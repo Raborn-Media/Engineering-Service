@@ -64,6 +64,28 @@ function resizeVideo() {
  * Scripts which runs after DOM load
  */
 $(document).on('ready', function () {
+  $('.browse-resume').on('click', function (e) {
+    e.preventDefault();
+    var fileInput = $('.file-resume');
+    fileInput.trigger('click');
+  });
+
+  $('.file-resume').on('change', function () {
+    var fileName = $(this).val().split('\\').pop();
+    $('.form-control--resume').val(fileName);
+  });
+
+  $('.browse-letter').on('click', function (e) {
+    e.preventDefault();
+    var fileInput = $('.file-letter');
+    fileInput.trigger('click');
+  });
+
+  $('.file-letter').on('change', function () {
+    var fileName = $(this).val().split('\\').pop();
+    $('.form-control--letter').val(fileName);
+  });
+
   $('.menu-icon').on('click', function () {
     var headerHeight = $('.header').outerHeight();
     $('.top-bar').css('top', headerHeight);

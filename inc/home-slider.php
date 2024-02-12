@@ -247,6 +247,7 @@ add_shortcode('slider', function () {
                                 <?php if ($file_info['ext']) : ?>
                                     <video src="<?php echo $bg_video_url; ?>"
                                            autoplay
+                                           playsinline
                                            preload="none"
                                            muted="muted"
                                            loop="loop"

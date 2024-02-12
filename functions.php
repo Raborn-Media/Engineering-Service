@@ -164,8 +164,9 @@ add_filter('use_block_editor_for_post_type', '__return_false');
  * Reset button for gForm
  *****************************************************************************/
 
-add_filter( 'gform_submit_button', 'form_reset_button', 10, 2 );
-function form_reset_button( $button, $form ) {
+add_filter('gform_submit_button', 'form_reset_button', 10, 2);
+function form_reset_button($button, $form)
+{
     // Adding a Reset button before the Submit button
     $button = '<button type="reset" value="Reset">Reset</button>' . $button;
 
