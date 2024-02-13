@@ -29,7 +29,8 @@ $join_form = get_sub_field( 'join_form' );
                 <?php if (class_exists('GFAPI') && !empty($join_form) && is_array($join_form)) : ?>
                     <div class="cell medium-6">
                         <div class="contact__form">
-                            <?php echo do_shortcode("[gravityform id='{$join_form['id']}' title='false' description='false' ajax='true']"); ?>
+<!--                            --><?php //echo do_shortcode("[gravityform id='{$join_form['id']}' title='false' description='false' ajax='true']"); ?>
+                            <?php echo do_shortcode("[gravityform id='3' title='false' description='false' ajax='true']"); ?>
                         </div>
                     </div>
                 <?php endif; ?>

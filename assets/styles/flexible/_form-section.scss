@@ -81,35 +81,34 @@
       }
     }
   }
-}
+  .form-group {
+    margin-top: 32px;
 
-.form-group {
-  margin-top: 32px;
+    .file-letter,
+    .file-resume {
+      visibility: hidden;
+      position: absolute;
+    }
 
-  .file-letter,
-  .file-resume {
-    visibility: hidden;
-    position: absolute;
-  }
+    .form-control {
+      background-color: $white !important;
+      border-radius: 0;
+    }
 
-  .form-control {
-    background-color: $white !important;
-    border-radius: 0;
-  }
-
-  .input-group-append {
-    button {
-      height: 50px !important;
-      font-size: 18px !important;
-      font-style: normal;
-      font-weight: 400 !important;
-      line-height: 27px !important; /* 150% */
-      padding: 8px 16px !important;
-      box-shadow: none !important;
-      border: none !important;
-      border-radius: 0 !important;
-      background-color: $deep-sage !important;
-      color: $white !important;
+    .input-group-append {
+      button {
+        height: 50px !important;
+        font-size: 18px !important;
+        font-style: normal;
+        font-weight: 400 !important;
+        line-height: 27px !important; /* 150% */
+        padding: 8px 16px !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: $deep-sage !important;
+        color: $white !important;
+      }
     }
   }
 }
