@@ -5,7 +5,7 @@ $join_form = get_sub_field( 'join_form' );
 ?>
 
 <!-- BEGIN  form-section -->
-<section class="form-section">
+<section id="form-section" class="form-section">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell text-center">

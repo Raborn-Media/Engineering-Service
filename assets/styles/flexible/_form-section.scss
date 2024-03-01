@@ -1,5 +1,6 @@
 .form-section {
   padding-top: 40px;
+
   .section-heading {
     margin-bottom: 80px;
   }
@@ -21,7 +22,7 @@
         margin-bottom: 32px;
 
         &.gfield--type-textarea {
-          margin-bottom: 0;
+          //margin-bottom: 0;
         }
       }
 
@@ -48,6 +49,7 @@
       select {
         padding: 12px 16px;
       }
+
       @include breakpoint(small down) {
         .gform_fields {
           grid-column-gap: 0;
@@ -75,40 +77,94 @@
           color: $white !important;
         }
       }
+
       .gform_button {
         background-color: $deep-sage !important;
         color: $white !important;
       }
     }
   }
-  .form-group {
-    margin-top: 32px;
+}
 
-    .file-letter,
-    .file-resume {
-      visibility: hidden;
-      position: absolute;
-    }
+.gform_fileupload_rules {
+  display: none !important;
+  opacity: 0;
+}
 
-    .form-control {
-      background-color: $white !important;
-      border-radius: 0;
-    }
+.custom-file-label input {
+  position: relative !important;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
 
-    .input-group-append {
-      button {
-        height: 50px !important;
-        font-size: 18px !important;
-        font-style: normal;
-        font-weight: 400 !important;
-        line-height: 27px !important; /* 150% */
-        padding: 8px 16px !important;
-        box-shadow: none !important;
-        border: none !important;
-        border-radius: 0 !important;
-        background-color: $deep-sage !important;
-        color: $white !important;
-      }
-    }
+  &::placeholder {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 150% */
+    color: #343434;
   }
+}
+
+.custom-file-label {
+  position: relative !important;
+}
+
+.custom-file-label label {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0.375rem 0.75rem !important;
+  overflow: hidden;
+  font-weight: 400 !important;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  line-height: 27px !important; /* 150% */
+  color: #343434 !important;
+}
+
+html[lang='en-US'] .custom-file-label label:after {
+  content: 'Browse';
+}
+
+html[lang='fr-FR'] .custom-file-label label:after {
+  content: 'Parcourir';
+}
+
+html[lang='es-ES'] .custom-file-label label:after {
+  content: 'Navegar';
+}
+
+.custom-file-label label:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  content: 'Browse';
+  border-left: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px !important;
+  font-size: 18px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 27px !important; /* 150% */
+  padding: 8px 16px !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: $deep-sage !important;
+  color: $white !important;
 }
